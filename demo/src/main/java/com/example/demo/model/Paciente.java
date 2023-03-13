@@ -1,12 +1,21 @@
-package com.example.demo;
+package com.example.demo.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class Paciente {
-    private String nombre, apellido, tipo_documento, numero_documento, diag_inicial, diag_final, medicamentos;
-    private LocalDateTime fecha_diag_inicial, fecha_diag_final, fecha_medicamento, fecha_atencion;
+    private String nombre, apellido, numero_documento, diag_inicial, diag_final, medicamentos;
+    private LocalDate fecha_diag_inicial, fecha_diag_final, fecha_medicamento, fecha_atencion;
+    private TipoDocumento tipo_documento;
 
     public Paciente() {
+    }
+
+    public Paciente(String nombre, String apellido, String numero_documento, LocalDate fecha_atencion, TipoDocumento tipo_documento) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.numero_documento = numero_documento;
+        this.fecha_atencion = fecha_atencion;
+        this.tipo_documento = tipo_documento;
     }
 
     public String getNombre() {
@@ -25,11 +34,11 @@ public class Paciente {
         this.apellido = apellido;
     }
 
-    public String getTipo_documento() {
+    public TipoDocumento getTipo_documento() {
         return tipo_documento;
     }
 
-    public void setTipo_documento(String tipo_documento) {
+    public void setTipo_documento(TipoDocumento tipo_documento) {
         this.tipo_documento = tipo_documento;
     }
 
@@ -65,35 +74,35 @@ public class Paciente {
         this.medicamentos = medicamentos;
     }
 
-    public LocalDateTime getFecha_diag_inicial() {
+    public LocalDate getFecha_diag_inicial() {
         return fecha_diag_inicial;
     }
 
-    public void setFecha_diag_inicial(LocalDateTime fecha_diag_inicial) {
+    public void setFecha_diag_inicial(LocalDate fecha_diag_inicial) {
         this.fecha_diag_inicial = fecha_diag_inicial;
     }
 
-    public LocalDateTime getFecha_diag_final() {
+    public LocalDate getFecha_diag_final() {
         return fecha_diag_final;
     }
 
-    public void setFecha_diag_final(LocalDateTime fecha_diag_final) {
+    public void setFecha_diag_final(LocalDate fecha_diag_final) {
         this.fecha_diag_final = fecha_diag_final;
     }
 
-    public LocalDateTime getFecha_medicamento() {
+    public LocalDate getFecha_medicamento() {
         return fecha_medicamento;
     }
 
-    public void setFecha_medicamento(LocalDateTime fecha_medicamento) {
+    public void setFecha_medicamento(LocalDate fecha_medicamento) {
         this.fecha_medicamento = fecha_medicamento;
     }
 
-    public LocalDateTime getFecha_atencion() {
+    public LocalDate getFecha_atencion() {
         return fecha_atencion;
     }
 
-    public void setFecha_atencion(LocalDateTime fecha_atencion) {
+    public void setFecha_atencion(LocalDate fecha_atencion) {
         this.fecha_atencion = fecha_atencion;
     }
 }
